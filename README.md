@@ -1,2 +1,3 @@
-# charit_donation
-Human Defi Project
+# street_children_donation
+
+Hello guys my name is Mghase am a web developer in Dodoma Tanzania,am so happy to be in this part of community of Block-chain developer this place is really good for learning and growing. In Africa and other part of the world there is big problem of street children ,so there are many NGOs that are trying to fight with the problem by looking for donors in different part of the world.Most of them use the normal website that are centralized which is prone to corruption,and miss-use of fund and in fact there is no transparency, so we created the online platform that will be used to collect donation to different donors across the word . The system allows for street children registration ,and then display his name,age,sex,location and image URL. Also it allows for contributor to state amount of his or her donation and publish it in a transparent manner. I kindly request all of you to take time to review my code and correct me as well because we learn from mistake.Lastly i would like to thank Aeternity for giving me this opportunity to show my ability.

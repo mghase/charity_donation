@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Org Dodantion</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="assets/css/scrollbar.css" >
+    <link rel="stylesheet" href="assets/css/loader.css" >    
+   
+    
+  <body >
+    <div id="scrollbar">
+    
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Charit Donation </a>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              </ul>
+              
+          </div>
+      </nav>
+    <div class="col-sm-12">
+  <div id="loader" style="text-align: center;">
+          <img src="assets/images/loading.svg" alt="">
+          <div><b>Please Wait!!...</b></div>
+      </div>
+</div>
+
+<div class="container-fluid mt-5" id="main" style="display:none">
+<div class="row">
+
+<!-- Left Column -->
+<div class="col-sm-5">
+
+	<!-- List-Group Panel -->
+	<div class="card">
+		<div class="card-header p-b-0">
+			<h5 class="card-title"><i class="fa fa-random" aria-hidden="true"></i> Register Child</h5>
+		</div>
+		<div class="card-body p-b-0">
+			<div class="row">
+
+	<div class="col-sm-6">
+	   <div class="form-group">
+	    <label for="name">Name</label>
+	    <input type="text" name="name" id="name" class="form-control" placeholder="Name" aria-describedby="name">
+	 </div>
+	</div>
+
+
+       <div class="col-sm-6">
+	   <div class="form-group">
+	    <label for="desc">Description</label>
+	    <input type="text" name="desc" id="desc" class="form-control" placeholder="OrganizationDeascription" aria-describedby="desc">
+	   </div>
+	</div>
+
+    
+
+	<div class="col-sm-6">
+	   <div class="form-group">
+	    <label for="location">Location</label>
+	    <input type="text" name="location" id="location" class="form-control" placeholder="Location" aria-describedby="location">
+	   </div>
+	</div>
+
+
+<div class="col-sm-12">
+   <div class="form-group">
+    <label for="url">Photo Url</label>
+    <input type="text" name="url" id="url" class="form-control" placeholder="url" aria-describedby="url">
+   </div>
+</div>
+
+<div class="col-sm-12">
+   <div class="form-group">
+   <button type="button" id="saveBtn" class="btn btn-lg btn-primary float-right">Save User</button>
+  </div>
+</div>
+</div>
+
+</div>
+</div>	
+</div><!--/Left Column-->
+
+<div class="col-sm-7">
+<!-- Text Panel -->
+<div class="card">
+<div class="card-header p-b-0">
+	<h5 class="card-title"><i class="fa fa-cog" aria-hidden="true"></i> Donate & Save life</h5>
+</div>
+
+<div class="card-body" >
+	<p class="card-text">List of Organization.</p>
+	<div id="child-list">
+	</div>
+</div>
+</div>
+ </div>
+</div>
+  
+</div>
+</div>
+      <script id="template" type="x-tmpl-mustache">
+      {{#orgsArray}}
+        <div class="card" style="width:300px">
+            <div class="card-body">
+              <h4 class="card-title">Site  : {{site_url}}</h4>
+             <h4 class="card-title">Name  : {{org_name}}</h4>
+             <p class="card-text">Location: {{location}}</p>
+             <p class="card-text">Description     : {{description}}</p>
+             <div class="card-text">Total   : {{amount}} AE</p>
+       
+              <div class="row">
+                <div class="col-sm-12">
+                 <div class="form-group">
+                   <label for="">Donate:</label>
+                   <input type="text" name="amount" id={{id}}  class="form-control" placeholder="Amount in AE" aria-describedby="amount">
+                </div>
+               </div>
+               <div class="col-sm-12">
+                 <div class="form-group">
+                  <button type="button"  class="btn btn-primary float-right donateBtn m-2 p-2" id={{id}}>Donate</button>
+                </div>
+             </div>
+         </div>
+   
+
+
+      </div>
+      <div class="card-footer">
+      <div class="row">
+     
+      <div class="col-sm-12">
+                 <div class="form-group">
+                  <button type="button"  class="btn btn-success col-sm-12 float-right openBtn m-2 p-2" id={{id}}>Open Donatiton</button>
+                </div>
+              
+       </div>
+
+         
+      <div class="col-sm-12">
+                
+                <div class="form-group">
+                  <button type="button"  class="btn btn-danger col-sm-12 float-right closeBtn m-2 p-2" id={{id}}>Close Donation</button>
+                </div>
+       </div>
+
+
+
+      </div>
+      </div>
+   </div>
+      {{/childsArray}}
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-3.3.1.slim.min.js" ></script>
+    <script src="assets/js/popper.min.js" ></script>
+    <script src="assets/js/bootstrap.min.js" ></script>
+    <script src="assets/js/mustache.min.js" ></script>
+    <script src="https://unpkg.com/@aeternity/aepp-sdk@6.1.2/dist/aepp-sdk.browser-script.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>

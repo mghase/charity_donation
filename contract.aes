@@ -1,0 +1,60 @@
+payable contract CharitDonationContract =
+      
+    record org = {
+        index      : int,
+        owner_address: address,
+        org_chain_name: string,
+        org_name: string,
+        location    : string,
+        site_url : string,
+        description : string,
+        amount      : int
+        }
+               
+    record state = {
+        orgs : map(int,org),
+        total: int
+        }
+          
+    entrypoint init() = {
+        orgs      = {},
+        total = 0
+        }
+                      
+                      
+    stateful entrypoint registerOrg(name' : string, desc' : string, location' : string, site_url' : string) =
+        let i  = getOrgTotal() + 1
+        let org = {
+            index  = i,
+            owner_address = Call.caller,
+            org_name = name',
+            org_chain_name = "",
+            location     = location',
+            site_url     = site_url',
+            description = desc',
+            amount       = 0
+            }
+        put(state {orgs[i]=org, total = i})
+                                            
+                                            
+                                            
+    entrypoint getOrg(index : int): org =
+        switch(Map.lookup(index, state.orgs))
+           None => abort("There was no organization Found")
+           Some(x) => x
+       
+       
+    entrypoint getOrgTotal() : int =
+        state.total 
+        
+      
+        
+    payable stateful entrypoint donate(index : int) =
+        let org = getOrg(index)
+        require(org.owner_address != Call.caller, "You cannot donate to your own Organization")
+        Chain.spend(org.owner_address,Call.value)
+        let updateAmount =org.amount+Call.value
+        let updateOrgs =state.orgs{[index].amount = updateAmount }
+        put(state {orgs = updateOrgs})     
+       
+         
