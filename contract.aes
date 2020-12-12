@@ -55,6 +55,5 @@ payable contract CharitDonationContract =
         Chain.spend(org.owner_address,Call.value)
         let updateAmount =org.amount+Call.value
         let updateOrgs =state.orgs{[index].amount = updateAmount }
-        put(state {orgs = updateOrgs})     
-       
-         
+        put(state {orgs = updateOrgs})
+        

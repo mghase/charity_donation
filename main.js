@@ -70,7 +70,7 @@ async function renderOrg() {
     Mustache.parse(template);
     var render = Mustache.render(template, {orgsArray});
     $('#org-list').html(render);
-    childTotal = await callStatic('getOrgTotal', [])
+    orgTotal = await callStatic('getOrgTotal', [])
     $('#total').html(orgTotal);
 }
 
