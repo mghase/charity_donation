@@ -101,19 +101,20 @@ window.addEventListener('load',async () =>{
 
     orgTotal = await callStatic('getOrgTotal', []);
 
+    console.log("total org",orgTotal);
+
     for (let i = 1; i <= orgTotal; i++) {
        const org = await callStatic('getOrg',[i]);
 
         orgsArray.push({
           index : org.index,
-            owner_address: address,
-        org_chain_name: string,
-        org_name: string,
-        location    : string,
-        site_url : string,
-        description : string,
-        amount      : int
-
+            owner_address: org.address,
+        org_chain_name: org.org_name,
+        org_name: org.org_name,
+        location    : org.location,
+        site_url : org.site_url,
+        description : org.description,
+        amount      : org.amount
         })
 
         
