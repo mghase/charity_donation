@@ -58,7 +58,7 @@ payable contract CharitDonationContract =
         let updateOrgs =state.orgs{[index].amount = updateAmount }
         put(state {orgs = updateOrgs})              
 `;
-var contractAddress= "ct_2kTj5G8vkMMc4Zrke6rFTcR6epazN8UJYYdhpMqxefqATfjRZJ";
+var contractAddress= "ct_2vyPVRLDRYxmKTvhVVVRzgVUpKwRktxcc56vZEhP6PFK3KFiGC";
 
 var client =null;
 
